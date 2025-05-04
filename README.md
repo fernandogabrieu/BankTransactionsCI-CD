@@ -1,16 +1,33 @@
-# myapp
+# BankTransactionsCI-CD
 
-A new Flutter project.
+Aplicativo Flutter didático para controle financeiro com suporte a **saques e depósitos**, desenvolvido com foco em **TDD (Test-Driven Development)** e integração contínua.
 
-## Getting Started
+## ✨ Funcionalidades
+- Exibe o saldo atual
+- Permite depósitos e saques com validação de valores
+- Feedback visual via SnackBar em caso de erro (ex: saldo insuficiente)
+- Interface mínima e funcional
 
-This project is a starting point for a Flutter application.
+## ✅ Testes
+- Testes unitários para regras de negócio (`FinancesController`)
+- Testes de widget para validação de interações na interface
+- Validação de exceções e fluxos incorretos
 
-A few resources to get you started if this is your first Flutter project:
+## ⚙️ CI/CD com GitHub Actions
+Este projeto utiliza uma esteira de CI/CD com os seguintes passos:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Checkout do repositório**
+2. **Instalação do Flutter (versão 3.32.0-0.2.pre, canal beta)**
+3. **Análise de código com `flutter analyze`**
+4. **Execução dos testes com `flutter test --coverage`**
+5. **Geração e upload do relatório de cobertura**
+6. **Build do APK (debug) com `flutter build apk --debug`**
+7. **Upload do APK como artefato para download**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+> Todos os passos são executados automaticamente a cada `push` na branch `main`.
+
+## Como executar localmente
+
+```bash
+flutter pub get
+flutter run
